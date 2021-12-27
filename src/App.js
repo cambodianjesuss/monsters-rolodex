@@ -14,8 +14,22 @@ class App extends Component{
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(res => res.json())
       .then(users => this.setState({monsters: users}))
-  }
 
+    const myPromise = new Promise((resolve, reject) =>{
+      if(false){
+        setTimeout(function(){
+          resolve("Worked")
+        }, 1000)
+      } else {
+        reject("Failed")
+      }
+    })
+
+    myPromise
+    .then(value => console.log(value))
+    .catch(errValue => console.log(errValue))
+  }
+  
   render(){
     return(
       <div className="App">

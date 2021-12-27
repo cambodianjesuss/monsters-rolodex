@@ -17,7 +17,7 @@ class App extends Component {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>{this.state.string}</p>
-        <button onClick={()=> this.setState()}></button>
+        <button onClick={()=> this.setState({ string: "Hello World"})}>Change Text</button>
       </header>
     </div>
     )
@@ -25,3 +25,5 @@ class App extends Component {
 }
 
 export default App;
+
+// {} JS expression inside JSX

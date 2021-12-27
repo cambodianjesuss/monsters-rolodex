@@ -6,7 +6,9 @@ class App extends Component {
 
   constructor() {
     super();
-    this.state = {}
+    this.state = {
+      string: "Hello boi"
+    }
   };
 
   render(){

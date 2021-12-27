@@ -27,3 +27,4 @@ class App extends Component {
 export default App;
 
 // {} JS expression inside JSX
+// Every time state changes/updates -- the render function re-renders

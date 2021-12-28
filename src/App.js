@@ -43,11 +43,11 @@ class App extends Component {
 
     return(
       <div className="App">
+        <h1>Monsters Rolodex</h1>
         <SearchBox 
           placeholder='search monsters'
           handleChange={this.handleChange} // `this` keyword only refers to the function not the component `this` until binding it in constructor function
         />
-        <input type='button' value='press' onClick={this.anotherFunction} />
         <CardList monsters={filteredMonsters} />
       </div>
     )

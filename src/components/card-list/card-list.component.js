@@ -2,5 +2,5 @@ import React from 'react';
 
 export const CardList = (props) => {
   console.log(props)
-  return (<div>Hello, {props.name}</div>)
+  return(<div>Hello</div>)
 }

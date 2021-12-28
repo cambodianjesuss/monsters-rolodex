@@ -9,3 +9,5 @@ export const Card = (props) => {
     </div>
   )
 }
+
+// back tick is "windows + esc"

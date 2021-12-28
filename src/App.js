@@ -12,6 +12,8 @@ class App extends Component {
       monsters: [],
       searchField: ''
     }
+    // Binding `this` to the context of component
+    this.handleChange = this.handleChange.bind(this)
   }
 
   componentDidMount(){
@@ -21,17 +23,22 @@ class App extends Component {
       .catch(err => console.log(err))
   }
 
+  handleChange(e){
+    // Context of `this` is not set to function until bind in constructor function
+    this.setState({ searchField: e.target.value})
+  }
+  
   render(){
 
     // Using state but not modifying data, just reading change
     const { monsters, searchField } = this.state;
     const filteredMonsters = monsters.filter(monster => monster.name.toLowerCase().includes(searchField.toLowerCase()))
-    
+
     return(
       <div className="App">
         <SearchBox 
           placeholder='search monsters'
-          handleChange={e => this.setState({ searchField: e.target.value})}
+          handleChange={this.handleChange} // `this` keyword only refers to the function not the component `this` until binding it in constructor function
         />
         <CardList monsters={filteredMonsters} />
       </div>

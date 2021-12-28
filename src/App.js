@@ -58,3 +58,4 @@ export default App;
 
 // {} JS expression inside JSX
 // Every time state changes/updates -- the render function re-renders
+// Arrow functions can set `this` context to what ever defined it

@@ -14,6 +14,7 @@ class App extends Component{
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(res => res.json())
       .then(users => this.setState({monsters: users}))
+      .catch(err => console.log('I errored'))
 
     const myPromise = new Promise((resolve, reject) =>{
       if(false){

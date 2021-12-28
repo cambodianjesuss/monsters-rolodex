@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import { CardList } from './components/card-list/card-list.component'
 import './App.css';
-import TestComponent from './components/test-component/test.component'
 
 class App extends Component {
 

@@ -12,8 +12,8 @@ class App extends Component {
       monsters: [],
       searchField: ''
     }
-    // Binding `this` to the context of component
-    this.handleChange = this.handleChange.bind(this)
+    // Binding `this` to the context of component when not using arrow function
+    // this.handleChange = this.handleChange.bind(this)
   }
 
   componentDidMount(){
@@ -23,10 +23,17 @@ class App extends Component {
       .catch(err => console.log(err))
   }
 
-  handleChange(e){
+  handleChange = (e) =>{
     // Context of `this` is not set to function until bind in constructor function
+    console.log(this)
     this.setState({ searchField: e.target.value})
   }
+
+  // anotherFunction (){
+  //   const name = "Boi Function This"
+  //   console.log(this)
+  // }
+
   
   render(){
 
@@ -40,6 +47,7 @@ class App extends Component {
           placeholder='search monsters'
           handleChange={this.handleChange} // `this` keyword only refers to the function not the component `this` until binding it in constructor function
         />
+        <input type='button' value='press' onClick={this.anotherFunction} />
         <CardList monsters={filteredMonsters} />
       </div>
     )

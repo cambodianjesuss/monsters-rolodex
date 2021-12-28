@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import './App.css';
 
-class App extends Component{
+class App extends Component {
 
   constructor(){
     super();
@@ -13,24 +13,10 @@ class App extends Component{
   componentDidMount(){
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(res => res.json())
-      .then(users => this.setState({monsters: users}))
-      .catch(err => console.log('I errored'))
-
-    const myPromise = new Promise((resolve, reject) =>{
-      if(false){
-        setTimeout(function(){
-          resolve("Worked")
-        }, 1000)
-      } else {
-        reject("Failed")
-      }
-    })
-
-    myPromise
-    .then(value => console.log(value))
-    .catch(errValue => console.log(errValue))
+      .then(users => this.setState({ monsters: users }))
+      .catch(err => console.log(err))
   }
-  
+
   render(){
     return(
       <div className="App">

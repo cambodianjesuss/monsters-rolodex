@@ -40,16 +40,16 @@ class App extends Component {
 
     // Using state but not modifying data, just reading change
     const { monsters, searchField, title } = this.state;
-    // const filteredMonsters = monsters.filter(monster => monster.name.toLowerCase().includes(searchField.toLowerCase())
+    const filteredMonsters = monsters.filter(monster => monster.name.toLowerCase().includes(searchField.toLowerCase()))
 
     return(
       <div className="App">
-        <h1>{ title }</h1>
+        <h1>Monsters Rolodex</h1>
         <SearchBox 
           placeholder='search monsters'
           handleChange={this.handleChange} // `this` keyword only refers to the function not the component `this` until binding it in constructor function
         />
-        <CardList monsters={monsters} />
+        <CardList monsters={filteredMonsters} />
       </div>
     )
   }

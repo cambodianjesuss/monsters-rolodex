@@ -11,7 +11,6 @@ class App extends Component {
     this.state = {
       monsters: [],
       searchField: '',
-      title: ''
     }
     // Binding `this` to the context of component when not using arrow function
     // this.handleChange = this.handleChange.bind(this)

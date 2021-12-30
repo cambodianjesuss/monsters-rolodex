@@ -38,7 +38,7 @@ class App extends Component {
   render(){
 
     // Using state but not modifying data, just reading change
-    const { monsters, searchField, title } = this.state;
+    const { monsters, searchField } = this.state;
     const filteredMonsters = monsters.filter(monster => monster.name.toLowerCase().includes(searchField.toLowerCase()))
 
     return(
